@@ -1,37 +1,34 @@
-# splitter-web
-Split SAGA PDF reports ("butlletins") into student individual PDFs. Count passed and evaluated UF from SAGA PDF reports ("actes").
+# random-sort-web
+Upload a CSV file without header and it will return a text file with the content from the first column randomly sorted and numbered.
 
 ## Installation
 Clone the repository into your web root folder.
 
-Make sure `uploads/` and `batch/tmp/` directories are web writable.
+Make sure `uploads/` and `script/tmp/` directories are web writable.
 
 ## Requirements
 ```
 sudo apt install apache2
 sudo apt install php7.4-cli
 sudo apt install php libapache2-mod-php
-sudo apt-get install python3	
-sudo apt install default-jdk
+sudo apt-get install python3
 sudo apt install python3-pip
-pip3 install PyPDF2
-pip3 install tika
+pip3 install pandas
 ```
 
 ## Apache configuration: VirtualHost
 ```
 <VirtualHost *:80>
-	ServerAdmin admin@splitter.local
-	ServerName www.splitter.local
-	ServerAlias splitter.local
-	DocumentRoot /var/www/html/splitter.local/public
+	ServerAdmin admin@random-sort.local
+	ServerName www.random-sort.local
+	ServerAlias random-sort.local
+	DocumentRoot /var/www/html/random-sort.local/public
 	ErrorLog ${APACHE_LOG_DIR}/error.log
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
 
 ## How to run
-```
-bash /var/www/html/batch/tika_server_start.sh
-```
+Start the server with:
+`sudo systemctl start apache2`
 Visit localhost:80 from your browser.
