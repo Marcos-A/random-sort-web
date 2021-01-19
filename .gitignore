@@ -1,0 +1,7 @@
+/uploads/*
+!/uploads/README.md
+/script/tmp/*
+!/script/tmp/README.md
+.DS_Store
+/log
+/test
