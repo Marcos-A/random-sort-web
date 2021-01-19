@@ -30,5 +30,7 @@ pip3 install pandas
 
 ## How to run
 Start the server with:
+
 `sudo systemctl start apache2`
+
 Visit localhost:80 from your browser.
